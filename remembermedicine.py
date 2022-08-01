@@ -1,12 +1,12 @@
 import datetime
 print(datetime.time())
 remedios = {}
-quantidade_remedios = int(input('Quantos remédios você quer cadastrar? '))
+quantidade_remedios = int(input('Quantos remédios você quer cadastrar?'))
 
 for q in range(1,quantidade_remedios+1):
-    remedios[f'remedio{q}'] = str(input(f'Nome do {q}º remédio: ')).strip().lower()
+    remedios[f'remedio{q}'] = str(input(f'Nome do {q}º remédio:')).strip().lower()
     remedios[f'horario{q}'] = int(input('Que horas você tomou o remédio? [HORA CHEIA]'))
-    freq = int(input('Com que frequência você deve tomar o remédio? '))
+    freq = int(input('Com que frequência você deve tomar o remédio?'))
     if remedios[f'horario{q}'] + freq < 24:
         remedios[f'prox_hora{q}'] = datetime.time(remedios[f'horario{q}']).hour + datetime.time(freq).hour
     else:
